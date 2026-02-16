@@ -10,7 +10,7 @@ export function Footer() {
               Dermatology of East Texas
             </span>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Providing exceptional dermatological care to East Texas families since 2009.
+              Providing exceptional dermatological care to East Texas families since 1994.
             </p>
           </div>
           <div>
@@ -50,16 +50,16 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Contact Info</h4>
             <ul className="space-y-2 text-sm text-foreground/80">
-              <li>123 Medical Center Drive, Suite 200</li>
-              <li>Tyler, TX 75701</li>
+              <li>107 Christie St.</li>
+              <li>Lufkin, TX 75904</li>
               <li>
-                <a href="tel:+19035551234" className="hover:text-foreground">
-                  (903) 555-1234
+                <a href="tel:+19366349648" className="hover:text-foreground">
+                  (936) 634-9648
                 </a>
               </li>
               <li>
-                <a href="mailto:info@dermeasttexas.com" className="hover:text-foreground">
-                  info@dermeasttexas.com
+                <a href="mailto:contact@dermetx.com" className="hover:text-foreground">
+                  contact@dermetx.com
                 </a>
               </li>
             </ul>

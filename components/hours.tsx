@@ -44,27 +44,40 @@ export function Hours() {
           {/* Location Side */}
           <div className="bg-background p-8 md:p-12">
             <h3 className="mb-2 text-xl font-semibold text-foreground">Visit Us</h3>
-            <p className="mb-6 text-sm text-muted-foreground">Conveniently located in Tyler&apos;s medical district.</p>
+            <p className="mb-6 text-sm text-muted-foreground">Conveniently located in Lufkin, Texas.</p>
 
-            <div className="mb-6 flex items-start gap-3">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=107+Christie+St+Lufkin+TX+75904"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-6 flex items-start gap-3 group"
+            >
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <div className="text-sm">
-                <p className="font-medium text-foreground">123 Medical Center Drive, Suite 200</p>
-                <p className="text-muted-foreground">Tyler, TX 75701</p>
+                <p className="font-medium text-foreground group-hover:text-primary transition-colors">107 Christie St.</p>
+                <p className="text-muted-foreground group-hover:text-primary transition-colors">Lufkin, TX 75904</p>
               </div>
-            </div>
+            </a>
 
             <div className="mb-8 aspect-video overflow-hidden rounded-sm bg-muted">
-              <img
-                src="/map-of-tyler-texas-medical-district-with-location-.jpg"
-                alt="Map showing clinic location in Tyler, Texas"
-                className="h-full w-full object-cover"
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.5!2d-94.8496!3d31.3382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z107+Christie+St%2C+Lufkin%2C+TX+75904!5e0!3m2!1sen!2sus!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Dermatology of East Texas location - 107 Christie St, Lufkin, TX 75904"
+                className="h-full w-full"
               />
             </div>
 
-            <Button size="lg" className="w-full">
-              <Phone className="mr-2 h-4 w-4" />
-              Call (903) 555-1234
+            <Button size="lg" className="w-full" asChild>
+              <a href="tel:+19366349648">
+                <Phone className="mr-2 h-4 w-4" />
+                Call (936) 634-9648
+              </a>
             </Button>
           </div>
         </div>

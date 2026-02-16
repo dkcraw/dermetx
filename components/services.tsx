@@ -1,4 +1,4 @@
-import { Stethoscope, Sparkles, ShieldCheck, Microscope, Sun, Syringe } from "lucide-react"
+import { Stethoscope, ShieldCheck, Microscope, Sun } from "lucide-react"
 
 const services = [
   {
@@ -17,19 +17,9 @@ const services = [
     description: "Safe removal and biopsy of suspicious moles and skin growths.",
   },
   {
-    icon: Sparkles,
-    title: "Cosmetic Treatments",
-    description: "Botox, fillers, chemical peels, and other aesthetic procedures for rejuvenated skin.",
-  },
-  {
     icon: Sun,
     title: "Sun Damage Repair",
     description: "Treatment for sun spots, photodamage, and prevention of further skin damage.",
-  },
-  {
-    icon: Syringe,
-    title: "Injectable Treatments",
-    description: "Professional administration of dermal fillers and neuromodulators for natural-looking results.",
   },
 ]
 
@@ -47,7 +37,7 @@ export function Services() {
             needs.
           </p>
         </div>
-        <div className="grid gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-2">
           {services.map((service) => (
             <div
               key={service.title}

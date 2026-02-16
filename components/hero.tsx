@@ -24,9 +24,11 @@ export function Hero() {
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Appointment
               </Button>
-              <Button variant="outline" size="lg">
-                View Services
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button variant="outline" size="lg" asChild>
+                <a href="#services">
+                  View Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
             {/* Trust indicators */}
@@ -42,17 +44,24 @@ export function Hero() {
               </div>
               <div className="h-8 w-px bg-border" />
               <div>
-                <p className="text-2xl font-bold text-foreground">5.0</p>
-                <p className="text-sm text-muted-foreground">Google Rating</p>
+                
+                
               </div>
             </div>
           </div>
           {/* Image Side */}
-          <div className="relative hidden lg:block">
-            <div className="aspect-[4/5] overflow-hidden rounded-sm">
+          <div className="relative hidden lg:flex lg:flex-col lg:gap-4">
+            <div className="aspect-[16/9] overflow-hidden rounded-sm">
               <img
-                src="/friendly-dermatologist-doctor-in-modern-clinic--pr.jpg"
-                alt="Dermatology specialist at our East Texas clinic"
+                src="/team-group-photo.jpg"
+                alt="Dr. Rowley and the Dermatology of East Texas team"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="aspect-[16/9] overflow-hidden rounded-sm">
+              <img
+                src="/dr-rowley-clinic.jpg"
+                alt="Dr. Rowley at Dermatology of East Texas"
                 className="h-full w-full object-cover"
               />
             </div>

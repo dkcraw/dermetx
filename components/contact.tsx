@@ -23,8 +23,8 @@ export function Contact() {
               </div>
               <h3 className="mb-1 text-sm font-semibold text-foreground">Phone</h3>
               <p className="mb-1 text-xs text-muted-foreground">Call us to schedule an appointment</p>
-              <a href="tel:+19035551234" className="text-sm font-semibold text-foreground hover:text-primary">
-                (903) 555-1234
+              <a href="tel:+19366349648" className="text-sm font-semibold text-foreground hover:text-primary">
+                (936) 634-9648
               </a>
             </div>
 
@@ -36,8 +36,8 @@ export function Contact() {
               </div>
               <h3 className="mb-1 text-sm font-semibold text-foreground">Email</h3>
               <p className="mb-1 text-xs text-muted-foreground">Send us a message anytime</p>
-              <a href="mailto:info@dermeasttexas.com" className="text-sm font-semibold text-foreground hover:text-primary">
-                info@dermeasttexas.com
+              <a href="mailto:contact@dermetx.com" className="text-sm font-semibold text-foreground hover:text-primary">
+                contact@dermetx.com
               </a>
             </div>
 
@@ -72,7 +72,7 @@ export function Contact() {
               </div>
               <div className="space-y-1.5">
                 <Label htmlFor="phone" className="text-xs">Phone</Label>
-                <Input id="phone" type="tel" placeholder="(903) 555-1234" />
+                <Input id="phone" type="tel" placeholder="(936) 634-9648" />
               </div>
               <div className="space-y-1.5">
                 <Label htmlFor="message" className="text-xs">Message</Label>
