@@ -59,15 +59,16 @@ export function Hours() {
               </div>
             </a>
 
-            <div className="mb-8 aspect-video overflow-hidden rounded-sm bg-muted">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.5!2d-94.8496!3d31.3382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDIwJzE3LjUiTiA5NMKwNTAnNTguNiJX!5e0!3m2!1sen!2sus!4v1739512345678!5m2!1sen!2sus"                width="100%"
+           <div className="mb-8 aspect-video overflow-hidden rounded-sm bg-muted">
+             <iframe
+                src="https://www.google.com/maps/embed/v1/place?q=107+Christie+St%2C+Lufkin%2C+TX+75904&key=AIzaSyD_4E6Hd6o9uQ4mQ5d1jZf3vKqR8sL9w0w"
+                width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Dermatology of East Texas location - 107 Christie St, Lufkin, TX 75904"
+                title="Dermatology of East Texas – 107 Christie St, Lufkin, TX 75904"
                 className="h-full w-full"
               />
             </div>
