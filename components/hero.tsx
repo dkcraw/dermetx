@@ -53,15 +53,15 @@ export function Hero() {
           <div className="relative hidden lg:flex lg:flex-col lg:gap-4">
             <div className="aspect-[16/9] overflow-hidden rounded-sm">
               <img
-                src="/team-group-photo.jpg"
-                alt="Dr. Rowley and the Dermatology of East Texas team"
+                src="/building.jpg"
+                alt="Dermatology of East Texas building"
                 className="h-full w-full object-cover"
               />
             </div>
             <div className="aspect-[16/9] overflow-hidden rounded-sm">
               <img
-                src="/dr-rowley-clinic.jpg"
-                alt="Dr. Rowley at Dermatology of East Texas"
+                src="/team-group-photo.jpg"
+                alt="Dr. Rowley and the team at Dermatology of East Texas"
                 className="h-full w-full object-cover"
               />
             </div>
