@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermatology of East Texas | Expert Skin Care in Lufkin, TX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --espresso: #3D3428;
+            --walnut: #7A6B57;
+            --bark: #A49279;
+            --sand: #C4B49A;
+            --ivory: #FAF7F2;
+            --cream: #F0EBE1;
+            --sage: #5B7A5E;
+            --sage-light: #7A9E7D;
+            --sage-dark: #3D5A3F;
+            --forest: #2C4A2E;
+            --gold: #C9A96E;
+            --gold-light: #D4BA85;
+            --clay: #C4907A;
+            --white: #FFFFFF;
+            --text-primary: #3D3428;
+            --text-secondary: #7A6B57;
+            --text-light: #A49279;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text-primary);
+            background: var(--ivory);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Grain overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* ===== UTILITY TOPBAR ===== */
+        .topbar {
+            background: var(--espresso);
+            color: var(--sand);
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topbar a { color: var(--sand); text-decoration: none; transition: color 0.3s; }
+        .topbar a:hover { color: var(--gold-light); }
+        .topbar-left { display: flex; gap: 1.5rem; align-items: center; }
+        .topbar-right { display: flex; gap: 1rem; align-items: center; }
+        .topbar-portal {
+            background: var(--sage);
+            color: var(--white) !important;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: background 0.3s;
+        }
+        .topbar-portal:hover { background: var(--sage-light) !important; }
+        .topbar-billpay {
+            background: var(--gold);
+            color: var(--espresso) !important;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: background 0.3s;
+        }
+        .topbar-billpay:hover { background: var(--gold-light) !important; }
+
+        /* ===== CENTERED NAV ===== */
+        .navbar {
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(164, 146, 121, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 2rem 0.8rem;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .navbar.scrolled { box-shadow: 0 2px 30px rgba(61, 52, 40, 0.08); }
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--espresso);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .nav-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--walnut);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1.5px;
+            background: var(--sage);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--sage); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-actions { display: flex; gap: 0.75rem; align-items: center; }
+        .btn-portal-nav {
+            padding: 0.5rem 1.2rem;
+            border: 1.5px solid var(--sage);
+            color: var(--sage);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            transition: all 0.3s;
+        }
+        .btn-portal-nav:hover { background: var(--sage); color: var(--white); }
+        .btn-book {
+            padding: 0.55rem 1.4rem;
+            background: var(--sage);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-book:hover { background: var(--sage-dark); }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--espresso);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* Mobile overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(250, 247, 242, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .mobile-menu-overlay.active { display: flex; }
+        .mobile-menu-overlay a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--espresso);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .mobile-menu-overlay a:hover { color: var(--sage); }
+        .mobile-close {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            background: none; border: none;
+            font-size: 2rem;
+            color: var(--espresso);
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 85vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: linear-gradient(135deg, var(--ivory) 0%, var(--cream) 50%, rgba(91,122,94,0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            padding: 5rem 4rem 5rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(91, 122, 94, 0.1);
+            color: var(--sage);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+        .hero-badge::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--sage);
+            border-radius: 50%;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--espresso);
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--sage);
+        }
+        .hero-sub {
+            font-size: 1.05rem;
+            color: var(--walnut);
+            max-width: 460px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary {
+            padding: 0.9rem 2rem;
+            background: var(--sage);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--sage-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(91,122,94,0.25); }
+        .btn-secondary {
+            padding: 0.9rem 2rem;
+            background: transparent;
+            color: var(--espresso);
+            border: 1.5px solid var(--bark);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover { border-color: var(--espresso); transform: translateY(-2px); }
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(164, 146, 121, 0.2);
+        }
+        .stat { text-align: left; }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--sage);
+        }
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--walnut);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .hero-image {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(to right, var(--ivory), transparent);
+            z-index: 1;
+        }
+        .hero-circle {
+            position: absolute;
+            width: 300px; height: 300px;
+            border: 1px solid rgba(91,122,94,0.15);
+            border-radius: 50%;
+            bottom: -100px; right: -80px;
+            z-index: 0;
+        }
+
+        /* ===== TEAM PHOTO ===== */
+        .team-photo-section {
+            padding: 0 6rem;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 3;
+        }
+        .team-photo-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(61, 52, 40, 0.12);
+            max-height: 400px;
+        }
+        .team-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 5rem 6rem; }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sage);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.8rem;
+        }
+        .section-tag::before {
+            content: '';
+            width: 30px; height: 1.5px;
+            background: var(--sage);
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--espresso);
+            margin-bottom: 0.8rem;
+        }
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--walnut);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--ivory); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(164, 146, 121, 0.12);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--sage);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(61, 52, 40, 0.1);
+            border-color: rgba(91, 122, 94, 0.2);
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon {
+            width: 50px; height: 50px;
+            background: rgba(91, 122, 94, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            transition: background 0.4s;
+        }
+        .service-card:hover .service-icon { background: var(--sage); }
+        .service-icon svg {
+            width: 24px; height: 24px;
+            stroke: var(--sage);
+            fill: none;
+            stroke-width: 1.5;
+            transition: stroke 0.4s;
+        }
+        .service-card:hover .service-icon svg { stroke: var(--white); }
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--espresso);
+            margin-bottom: 0.6rem;
+        }
+        .service-card p {
+            font-size: 0.88rem;
+            color: var(--walnut);
+            line-height: 1.6;
+        }
+
+        /* ===== ABOUT / DOCTOR ===== */
+        .about {
+            background: var(--cream);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2.5rem;
+        }
+        .about-photo {
+            position: relative;
+        }
+        .about-photo img {
+            width: 100%;
+            border-radius: 12px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 60px rgba(61, 52, 40, 0.12);
+        }
+        .about-photo::before {
+            content: '';
+            position: absolute;
+            top: -15px; left: -15px;
+            width: 100%; height: 100%;
+            background: rgba(91, 122, 94, 0.1);
+            border-radius: 12px;
+            z-index: 1;
+        }
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--espresso);
+            margin-bottom: 0.3rem;
+        }
+        .about-text .credential {
+            font-size: 0.85rem;
+            color: var(--sage);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.2rem;
+        }
+        .about-text p {
+            font-size: 0.95rem;
+            color: var(--walnut);
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        .about-badges {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .about-badge {
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(164, 146, 121, 0.12);
+        }
+        .about-badge strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--sage);
+        }
+        .about-badge span {
+            font-size: 0.75rem;
+            color: var(--walnut);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* ===== HOURS ===== */
+        .hours {
+            background: var(--forest);
+            color: var(--cream);
+        }
+        .hours .section-tag { color: var(--sage-light); }
+        .hours .section-tag::before { background: var(--sage-light); }
+        .hours .section-title { color: var(--ivory); }
+        .hours .section-subtitle { color: var(--sand); }
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+        .hours-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .hours-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--ivory);
+            margin-bottom: 1.2rem;
+        }
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.9rem;
+        }
+        .hours-row:last-child { border-bottom: none; }
+        .hours-day { color: var(--sand); }
+        .hours-time { color: var(--ivory); font-weight: 500; }
+        .hours-closed { color: var(--clay); }
+        .hours-note {
+            margin-top: 1rem;
+            font-size: 0.82rem;
+            color: var(--sand);
+            font-style: italic;
+        }
+        .location-card { display: flex; flex-direction: column; gap: 1rem; }
+        .location-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--ivory);
+            margin-bottom: 0.5rem;
+        }
+        .location-card p { color: var(--sand); font-size: 0.95rem; line-height: 1.7; }
+        .location-links { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.5rem; }
+        .location-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sage-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .location-links a:hover { color: var(--ivory); }
+
+        /* ===== CONTACT ===== */
+        .contact { background: var(--ivory); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+        .contact-methods { display: flex; flex-direction: column; gap: 1.2rem; }
+        .contact-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(164, 146, 121, 0.12);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(61, 52, 40, 0.08);
+        }
+        .contact-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--espresso);
+            margin-bottom: 0.3rem;
+        }
+        .contact-card p {
+            font-size: 0.85rem;
+            color: var(--walnut);
+        }
+        .contact-card .contact-value {
+            color: var(--sage);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(164, 146, 121, 0.12);
+        }
+        .contact-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--espresso);
+            margin-bottom: 1.2rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--walnut);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.4rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(164, 146, 121, 0.2);
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            background: var(--ivory);
+            color: var(--espresso);
+            transition: border-color 0.3s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--sage);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--espresso);
+            color: var(--sand);
+            padding: 3rem 6rem 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--ivory);
+            margin-bottom: 0.8rem;
+        }
+        .footer-desc {
+            font-size: 0.85rem;
+            color: var(--bark);
+            line-height: 1.7;
+        }
+        footer h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: var(--ivory);
+            margin-bottom: 0.8rem;
+        }
+        footer ul { list-style: none; }
+        footer li { margin-bottom: 0.4rem; }
+        footer a {
+            color: var(--bark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        footer a:hover { color: var(--sage-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(164, 146, 121, 0.15);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--bark);
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            section { padding: 4rem 3rem; }
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-content { padding: 4rem 3rem; }
+            .hero-image { height: 350px; }
+            .hero-image::after { width: 0; }
+            .hero h1 { font-size: 2.6rem; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; }
+            .hours-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .team-photo-section { padding: 0 3rem; }
+            footer { padding: 3rem 3rem 2rem; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 3.5rem 1.5rem; }
+            .topbar { font-size: 0.72rem; padding: 0.4rem 1rem; }
+            .topbar-left span:first-child { display: none; }
+            .navbar { padding: 0.8rem 1.5rem 0.6rem; }
+            .nav-brand { font-size: 1.3rem; }
+            .nav-row { display: none; }
+            .mobile-toggle { display: block; position: absolute; top: 1rem; right: 1.5rem; }
+            .hero-content { padding: 3rem 1.5rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+            .section-title { font-size: 1.8rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .team-photo-section { padding: 0 1.5rem; margin-top: -1.5rem; }
+            footer { padding: 3rem 1.5rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Utility topbar -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <span>107 Christie St., Lufkin, TX 75904</span>
+            <a href="tel:+19366349648">(936) 634-9648</a>
+        </div>
+        <div class="topbar-right">
+            <a href="https://doet.ema.md/ema/pay/onlinepay" class="topbar-billpay" target="_blank">Online Bill Pay</a>
+            <a href="#" class="topbar-portal">Patient Portal</a>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-brand">Dermatology of East Texas</a>
+        <div class="nav-row" id="navLinks">
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#hours">Hours</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn-portal-nav">Patient Portal</a>
+                <a href="tel:+19366349648" class="btn-book">Book Appointment</a>
+            </div>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#hours" class="mobile-link">Hours</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="https://doet.ema.md/ema/pay/onlinepay" target="_blank" class="btn-book" style="margin-top: 1rem;">Online Bill Pay</a>
+        <a href="#" class="btn-portal-nav">Patient Portal</a>
+        <a href="tel:+19366349648" class="btn-book" style="margin-top: 0.5rem;">Book Appointment</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Board-Certified Dermatology</div>
+            <h1>Healthy skin starts with <em>expert care</em></h1>
+            <p class="hero-sub">Comprehensive dermatological care for the whole family. From medical treatments to cosmetic enhancements, we help you look and feel your best.</p>
+            <div class="hero-btns">
+                <a href="tel:+19366349648" class="btn-primary">Book Appointment</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num">30+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">10,000+</div>
+                    <div class="stat-label">Patients Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">5×</div>
+                    <div class="stat-label">Best in Lufkin</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://dermetx.com/building.jpg" alt="Dermatology of East Texas building">
+            <div class="hero-circle"></div>
+        </div>
+    </section>
+
+    <!-- Team Photo -->
+    <div class="team-photo-section reveal">
+        <div class="team-photo-wrapper">
+            <img src="https://dermetx.com/team-group-photo.jpg" alt="Dr. Rowley and the team at Dermatology of East Texas">
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="reveal">
+            <div class="section-tag">What We Offer</div>
+            <h2 class="section-title">Comprehensive Skin Care</h2>
+            <p class="section-subtitle">From routine skin checks to advanced treatments, we provide expert care for all your dermatological needs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </div>
+                <h3>Medical Dermatology</h3>
+                <p>Diagnosis and treatment of skin conditions including acne, eczema, psoriasis, and rashes.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                </div>
+                <h3>Skin Cancer Screening</h3>
+                <p>Comprehensive skin exams and early detection of melanoma and other skin cancers.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>Mole Removal</h3>
+                <p>Safe removal and biopsy of suspicious moles and skin growths.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </div>
+                <h3>Superficial Radiation Therapy</h3>
+                <p>Non-surgical SRT treatment for non-melanoma skin cancers — a painless, scalpel-free option with excellent cure rates and minimal scarring.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="reveal">
+            <div class="section-tag">Meet Your Physician</div>
+            <h2 class="section-title">Your Skin, Our Expertise</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-photo reveal">
+                <img src="https://dermetx.com/dr-rowley-headshot.jpg" alt="Dr. Matthew Rowley, M.D.">
+            </div>
+            <div class="about-text reveal">
+                <h3>Dr. Matthew Rowley, M.D.</h3>
+                <div class="credential">Board-Certified Dermatologist</div>
+                <p>Dr. Matthew Rowley is a board-certified dermatologist with over 30 years of experience in medical and surgical dermatology. Born in Fort Worth and raised in Houston, Texas, Dr. Rowley began his academic career at the University of Texas at Austin, graduating Summa Cum Laude.</p>
+                <p>He earned his medical degree from Southwestern Medical School in Dallas in 1990 and completed his dermatology residency at the historic Charity Hospital in New Orleans, Louisiana.</p>
+                <p>After residency, Dr. Rowley moved to Lufkin, Texas, where he founded Dermatology of East Texas in 1994. For over three decades, he has provided compassionate, patient-centered care to the East Texas community. He was voted best dermatologist in Lufkin 5 years in a row.</p>
+                <div class="about-badges">
+                    <div class="about-badge">
+                        <strong>UT Austin</strong>
+                        <span>Summa Cum Laude</span>
+                    </div>
+                    <div class="about-badge">
+                        <strong>30+ Years</strong>
+                        <span>Of Experience</span>
+                    </div>
+                    <div class="about-badge">
+                        <strong>5× Voted</strong>
+                        <span>Best in Lufkin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours -->
+    <section class="hours" id="hours">
+        <div class="reveal">
+            <div class="section-tag">Plan Your Visit</div>
+            <h2 class="section-title">Hours & Location</h2>
+            <p class="section-subtitle">Walk-ins welcome. Appointments recommended.</p>
+        </div>
+        <div class="hours-grid">
+            <div class="hours-card reveal">
+                <h3>Office Hours</h3>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">8:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">8:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">8:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">8:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">8:00 AM – 12:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time hours-closed">Closed</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time hours-closed">Closed</span></div>
+            </div>
+            <div class="location-card reveal">
+                <h3>Visit Us</h3>
+                <p>Conveniently located in Lufkin, Texas, serving patients across East Texas.</p>
+                <div class="location-links">
+                    <a href="https://www.google.com/maps/search/?api=1&query=107+Christie+St+Lufkin+TX+75904" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        107 Christie St., Lufkin, TX 75904
+                    </a>
+                    <a href="tel:+19366349648">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        (936) 634-9648
+                    </a>
+                    <a href="mailto:dermetx@consolidated.net">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        dermetx@consolidated.net
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="reveal">
+            <div class="section-tag">Get in Touch</div>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Have questions or ready to schedule? We're here to help.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-methods reveal">
+                <a href="tel:+19366349648" class="contact-card">
+                    <h4>Phone</h4>
+                    <p>Call us to schedule an appointment</p>
+                    <div class="contact-value">(936) 634-9648</div>
+                </a>
+                <a href="mailto:dermetx@consolidated.net" class="contact-card">
+                    <h4>Email</h4>
+                    <p>Send us a message anytime</p>
+                    <div class="contact-value">dermetx@consolidated.net</div>
+                </a>
+                <a href="https://doet.ema.md/ema/pay/onlinepay" target="_blank" class="contact-card">
+                    <h4>Online Bill Pay</h4>
+                    <p>Pay your balance securely online</p>
+                    <div class="contact-value">Pay Now →</div>
+                </a>
+                <a href="#" class="contact-card">
+                    <h4>Patient Portal</h4>
+                    <p>Access records and schedule online</p>
+                    <div class="contact-value">Login to Portal →</div>
+                </a>
+            </div>
+            <div class="contact-form reveal">
+                <h3>Send a Message</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Doe">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="(936) 555-1234">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="How can we help you?"></textarea>
+                </div>
+                <button class="btn-primary" style="width: 100%;">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Dermatology of East Texas</div>
+                <p class="footer-desc">Providing exceptional dermatological care to East Texas families since 1994.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#hours">Hours & Location</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Medical Dermatology</a></li>
+                    <li><a href="#services">Skin Cancer Screening</a></li>
+                    <li><a href="#services">Mole Removal</a></li>
+                    <li><a href="#services">Superficial Radiation Therapy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=107+Christie+St+Lufkin+TX+75904">107 Christie St.</a></li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=107+Christie+St+Lufkin+TX+75904">Lufkin, TX 75904</a></li>
+                    <li><a href="tel:+19366349648">(936) 634-9648</a></li>
+                    <li><a href="mailto:dermetx@consolidated.net">dermetx@consolidated.net</a></li>
+                    <li><a href="https://doet.ema.md/ema/pay/onlinepay" target="_blank">Online Bill Pay</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Dermatology of East Texas. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.add('active'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        revealElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
